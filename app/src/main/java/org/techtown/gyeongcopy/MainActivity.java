@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import org.techtown.gyeongcopy.R;
 
+//수정
 public class MainActivity extends AppCompatActivity {
 
     double twoone=0;
