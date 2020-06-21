@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewActivity1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:background="#ffffff"
+            android:elevation="5dp"
+            android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+            </com.github.mikephil.charting.charts.LineChart>
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="       ※ 분석을 원하는 점수를 선택하세요."
+                android:textColor="#000000" />
+
+            <RadioGroup
+                android:id="@+id/radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/someone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/yunred"
+                    android:text="원점수" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="#000000" />
+
+                <RadioButton
+                    android:id="@+id/stillloveyou"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/yunblue"
+                    android:text="표준점수" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="       ※ 표준점수 = (원점수-평균점수)/표준편차"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

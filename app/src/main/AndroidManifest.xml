@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.techtown.gyeongcopy">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_calculator"
+        android:label="중학교 내신 산출기"
+        android:roundIcon="@mipmap/ic_launcher_calculator_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".NewActivity4"
+            android:label="그래프4">
+        </activity>
+        <activity android:name=".NewActivity3"
+            android:label="그래프3"></activity>
+        <activity android:name=".NewActivity0"
+            android:label="그래프0"></activity>
+        <activity android:name=".NewActivity2"
+            android:label="그래프2"></activity>
+        <activity android:name=".NewActivity1"
+            android:label="그래프1"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.techtown.gyeongcopy.Fragment_inf" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="#ffffff"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:text="중학 내신 산출기 앱에 대한 정보입니다."
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="[전형방법]" />
+
+            <TextView
+                android:id="@+id/textView58"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="※ 일반고등학교(자율형공립고 포함) :" />
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="평준화지역과 비평준화지역의 경우 중학교 내신성적 200점 으로 선발한다." />
+
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="※ 중학교 내신성적은 교과활동상황 150점, 출결상황 20점, 봉사활동 실적 20점, 학교활동(수상실적 및 자치회임원활동) 실적 10점, 총 200점으로 산출한다." />
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="  (단, 특목고, 특성화고(교육감지정), 자율형 사립고, 마이스터고, 학교운영의 특례를 적용받는 학교(구 자율학교)는 학교별 별도 내신산출하여 학교별로 전형한다.)" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="[반영기준 및 시기]" />
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="※ 3학년 2학기 기말고사까지 (봉사활동, 학교활동은 10월 말 기준)" />
+
+            <TextView
+                android:id="@+id/textView64"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="   (단 졸업자의 3학년 내신성적반영은 졸업대장에 기재된 것을 반영)" />
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="※ 마이스터고, 특성화고, 자율형 학교의 경우 학교별 전형요항에 따름" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="[주의사항]" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="※  학생의 이수과목 성적이 학기 또는 학년 전체에 없을 경우" />
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="  가. 학년 내 1학기 성적이 없을 경우 2학기 성적으로, 2학기 성적이 없을 경우 1학기 성적으로 대체한다." />
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="  나. 학년 내 1, 2학기 성적이 모두 없을 경우 차상위 학년을 기준으로 학기별로 대체한다." />
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="  다. 학년 내 1, 2학기 성적이 모두 없고 차상위 학년도 없을 경우 차하위 학년을 기준으로 학기별로 대체한다." />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="[사용법]"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="1. 화면을 넘겨서 학기별로 점수를 입력한다."
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView65"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="2. 예술, 체육 분야의 성취도를 선택한다."
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="3. 한 탭(학기별)이 끝날 때 마다 계산하기 버튼을 누른다."
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView74"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="4. 학교생활기록부 탭에서 결과를 선택하여 입력한다."
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="5. 최종적으로 결과탭으로 넘어와서 성적 계산하기 버튼을 클릭하여 최종 결과를 확인한다."
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="6. 성적 추이를 확인하고자 할 경우 성적 분석하기 버튼을 클릭한다."
+                android:textColor="#000000" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

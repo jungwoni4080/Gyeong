@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.techtown.gyeongcopy.Fragment_5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="#ffffff"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:text="학교생활기록부를 참조하여 선택하세요."
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:background="#4CAF50"
+                    android:gravity="center"
+                    android:scrollbarSize="16dp"
+                    android:text="영역별 기준"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text=" 가. 1학년 무단결석" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text="     1학년 무단 지각,조퇴,결과" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text=" 나. 2학년 무단결석" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text="     2학년 무단 지각,조퇴,결과" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text=" 다. 3학년 무단결석" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text="     3학년 무단 지각,조퇴,결과" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text=" 라. 봉사시간" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text=" 마. 교내상 수상 횟수" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="left"
+                    android:scrollbarSize="16dp"
+                    android:text=" 바. 자치회 임원활동개월수" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:background="#4CAF50"
+                    android:gravity="center"
+                    android:scrollbarSize="16dp"
+                    android:text="선택"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:gravity="center"
+                    android:scrollbarSize="16dp" />
+
+                <EditText
+                    android:id="@+id/first"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:scrollbarSize="16dp"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:gravity="center"
+                    android:scrollbarSize="16dp" />
+
+                <EditText
+                    android:id="@+id/second"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:scrollbarSize="16dp"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinner5"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:gravity="center"
+                    android:scrollbarSize="16dp" />
+
+                <EditText
+                    android:id="@+id/third"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:scrollbarSize="16dp"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/fourth"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/fifth"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/sixth"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="14sp"
+                    android:selectAllOnFocus="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/radio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/bob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/yunred"
+                        android:checked="true"
+                        android:text="봉사점수 60점 만점" />
+
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="#000000" />
+
+                    <RadioButton
+                        android:id="@+id/dylan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/yunblue"
+                        android:text="봉사점수 40점 만점" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#ffffff"
+                android:elevation="5dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:text="성적 계산하기 →"
+                    android:textColor="#FF80AB"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="#000000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView90"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="출결(20)"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/printscore1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0.0"
+                            android:textColor="#000000"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2sp"
+                        android:layout_marginBottom="2sp"
+                        android:background="#000000" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView110"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="봉사(20)"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/printscore2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0.0"
+                            android:textColor="#000000"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2sp"
+                        android:layout_marginBottom="2sp"
+                        android:background="#000000" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView91"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="학교활동(10)"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/printscore3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0.0"
+                            android:textColor="#000000"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
