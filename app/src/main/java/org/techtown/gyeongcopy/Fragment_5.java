@@ -45,11 +45,6 @@ public class Fragment_5 extends Fragment {
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_fragment_5,null);
 
-        RadioButton bob = view.findViewById(R.id.bob);
-        RadioButton dylan = view.findViewById(R.id.dylan);
-        final RadioGroup Queen = view.findViewById(R.id.radio);
-
-        bob.setChecked(true);
 
 
         first = (EditText)view.findViewById(R.id.first);
@@ -228,15 +223,16 @@ public class Fragment_5 extends Fragment {
             public void onClick(View v) {
                 //final int bongsa = Integer.parseInt(fourth.getText().toString());
                 //final이 뭔진 모르겠다
-                if(yesstart[0] ==1) {
+                /*if(yesstart[0] ==1) {
                     int bongsa = Integer.parseInt(fourth.getText().toString());
                     bongsajumsu = bongsa1(bongsa);
                     printscore2.setText(Integer.toString(bongsajumsu));
                     ((MainActivity) getActivity()).sangbong = bongsajumsu;
                     yesstart[0] =0;
-                }
-
-                Queen.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                }*/
+                int bongsa = Integer.parseInt(fourth.getText().toString());
+                bongsajumsu=bongsa2(bongsa);
+                /*Queen.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
                         int bongsa = Integer.parseInt(fourth.getText().toString());
@@ -249,7 +245,7 @@ public class Fragment_5 extends Fragment {
                                 break;
                         }
                     }
-                });
+                });*/
                 /*if(bongsa<=4){
                     bongsajumsu=8;
                 }
@@ -297,7 +293,7 @@ public class Fragment_5 extends Fragment {
                 double one1=one;
                 double one2=three;
                 double one3=five;
-                double hakgyo = 7+imwon*0.1+sang*0.5;
+                double hakgyo = 8+imwon*0.1+sang*0.5;
                 if(hakgyo>10){
                     hakgyo=10;
                 }

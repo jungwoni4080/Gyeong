@@ -227,7 +227,7 @@ public class Fragment_1 extends Fragment {
                 ac9.setText(iacscore9);
                 ac10.setText(iacscore10);
                 ac11.setText(iacscore11);
-
+//qnpfq
                 int iactoint = chartoint(iacscore);
                 int iactoint2 = chartoint(iacscore2);
                 int iactoint3 = chartoint(iacscore3);
