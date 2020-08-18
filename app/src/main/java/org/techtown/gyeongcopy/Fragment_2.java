@@ -173,17 +173,40 @@ public class Fragment_2 extends Fragment {
             @Override
             public void onClick(View v) {
                 how_many_subjects=0;
-                iscore = Integer.parseInt(score.getText().toString()); //점수 정의
-                iscore2 = Integer.parseInt(score2.getText().toString());
-                iscore3 = Integer.parseInt(score3.getText().toString());
-                iscore4 = Integer.parseInt(score4.getText().toString());
-                iscore5 = Integer.parseInt(score5.getText().toString());
-                iscore6 = Integer.parseInt(score6.getText().toString());
-                iscore7 = Integer.parseInt(score7.getText().toString());
-                iscore8 = Integer.parseInt(score8.getText().toString());
-                iscore9 = Integer.parseInt(score9.getText().toString());
-                iscore10 = Integer.parseInt(score10.getText().toString());
-                iscore11 = Integer.parseInt(score11.getText().toString());
+                if(score.length()==0) iscore=0;
+                else{
+                    iscore = Integer.parseInt(score.getText().toString()); //점수 정의
+                }
+                if(score2.length()==0) iscore2=0;
+                else{
+                    iscore2 = Integer.parseInt(score2.getText().toString());}
+                if(score3.length()==0) iscore3=0;
+                else{
+                    iscore3 = Integer.parseInt(score3.getText().toString());}
+                if(score4.length()==0) iscore4=0;
+                else{
+                    iscore4 = Integer.parseInt(score4.getText().toString());}
+                if(score5.length()==0) iscore5=0;
+                else{
+                    iscore5 = Integer.parseInt(score5.getText().toString());}
+                if(score6.length()==0) iscore6=0;
+                else{
+                    iscore6 = Integer.parseInt(score6.getText().toString());}
+                if(score7.length()==0) iscore7=0;
+                else{
+                    iscore7 = Integer.parseInt(score7.getText().toString());}
+                if(score8.length()==0) iscore8=0;
+                else{
+                    iscore8 = Integer.parseInt(score8.getText().toString());}
+                if(score9.length()==0) iscore9=0;
+                else{
+                    iscore9 = Integer.parseInt(score9.getText().toString());}
+                if(score10.length()==0) iscore10=0;
+                else{
+                    iscore10 = Integer.parseInt(score10.getText().toString());}
+                if(score11.length()==0) iscore11=0;
+                else{
+                    iscore11 = Integer.parseInt(score11.getText().toString());}
 
                 String iacscore = whatschar(iscore);
                 String iacscore2 = whatschar(iscore2);
@@ -222,28 +245,75 @@ public class Fragment_2 extends Fragment {
                 int iactoint11 = chartoint(iacscore11);
                 int Asum=iactoint+iactoint2+iactoint3+iactoint4+iactoint5+iactoint6+iactoint7+iactoint8+iactoint9+iactoint10+iactoint11;
                 //ac.setText(Character((char)(70-)));
-                iavg = Double.parseDouble(avg1.getText().toString());//평균과 표준편차 정의
-                iavg2 = Double.parseDouble(avg2.getText().toString());
-                iavg3 = Double.parseDouble(avg3.getText().toString());
-                iavg4 = Double.parseDouble(avg4.getText().toString());
-                iavg5 = Double.parseDouble(avg5.getText().toString());
-                iavg6 = Double.parseDouble(avg6.getText().toString());
-                iavg7 = Double.parseDouble(avg7.getText().toString());
-                iavg8 = Double.parseDouble(avg8.getText().toString());
-                iavg9 = Double.parseDouble(avg9.getText().toString());
-                iavg10 = Double.parseDouble(avg10.getText().toString());
-                iavg11 = Double.parseDouble(avg11.getText().toString());
-                istan = Double.parseDouble(stan1.getText().toString());
-                istan2 = Double.parseDouble(stan2.getText().toString());
-                istan3 = Double.parseDouble(stan3.getText().toString());
-                istan4 = Double.parseDouble(stan4.getText().toString());
-                istan5 = Double.parseDouble(stan5.getText().toString());
-                istan6 = Double.parseDouble(stan6.getText().toString());
-                istan7 = Double.parseDouble(stan7.getText().toString());
-                istan8 = Double.parseDouble(stan8.getText().toString());
-                istan9 = Double.parseDouble(stan9.getText().toString());
-                istan10 = Double.parseDouble(stan10.getText().toString());
-                istan11 = Double.parseDouble(stan11.getText().toString());
+                if(avg1.length()==0) iavg=0;
+                else {
+                    iavg = Double.parseDouble(avg1.getText().toString());//평균과 표준편차 정의
+                }
+                if(avg2.length()==0) iavg2=0;
+                else{
+                    iavg2 = Double.parseDouble(avg2.getText().toString());}
+                if(avg3.length()==0) iavg3=0;
+                else{
+                    iavg3 = Double.parseDouble(avg3.getText().toString());}
+                if(avg4.length()==0) iavg4=0;
+                else{
+                    iavg4 = Double.parseDouble(avg4.getText().toString());}
+                if(avg5.length()==0) iavg5=0;
+                else{
+                    iavg5 = Double.parseDouble(avg5.getText().toString());}
+                if(avg6.length()==0) iavg6=0;
+                else{
+                    iavg6 = Double.parseDouble(avg6.getText().toString());}
+                if(avg7.length()==0) iavg7=0;
+                else{
+                    iavg7 = Double.parseDouble(avg7.getText().toString());}
+                if(avg8.length()==0) iavg8=0;
+                else{
+                    iavg8 = Double.parseDouble(avg8.getText().toString());}
+                if(avg9.length()==0) iavg9=0;
+                else{
+                    iavg9 = Double.parseDouble(avg9.getText().toString());}
+                if(avg10.length()==0) iavg10=0;
+                else{
+                    iavg10 = Double.parseDouble(avg10.getText().toString());}
+                if(avg11.length()==0) iavg11=0;
+                else{
+                    iavg11 = Double.parseDouble(avg11.getText().toString());}
+
+                if(stan1.length()==0) istan=0;
+                else{
+                    istan = Double.parseDouble(stan1.getText().toString());}
+                if(stan2.length()==0) istan2=0;
+                else{
+                    istan2 = Double.parseDouble(stan2.getText().toString());}
+                if(stan3.length()==0) istan3=0;
+                else{
+                    istan3 = Double.parseDouble(stan3.getText().toString());}
+                if(stan4.length()==0) istan4=0;
+                else{
+                    istan4 = Double.parseDouble(stan4.getText().toString());}
+                if(stan5.length()==0) istan5=0;
+                else{
+                    istan5 = Double.parseDouble(stan5.getText().toString());}
+                if(stan6.length()==0) istan6=0;
+                else{
+                    istan6 = Double.parseDouble(stan6.getText().toString());}
+                if(stan7.length()==0) istan7=0;
+                else{
+                    istan7 = Double.parseDouble(stan7.getText().toString());}
+                if(stan8.length()==0) istan8=0;
+                else{
+                    istan8 = Double.parseDouble(stan8.getText().toString());}
+                if(stan9.length()==0) istan9=0;
+                else{
+                    istan9 = Double.parseDouble(stan9.getText().toString());}
+                if(stan10.length()==0) istan10=0;
+                else{
+                    istan10 = Double.parseDouble(stan10.getText().toString());}
+
+                if(stan11.length()==0) istan11=0;
+                else{
+                    istan11 = Double.parseDouble(stan11.getText().toString());}
                 //String iac12 = ac12.getText().toString(); //음미체 확인
                 //String iac13 = ac13.getText().toString();
                 //String iac14 = ac14.getText().toString();
@@ -268,7 +338,7 @@ public class Fragment_2 extends Fragment {
                 realscore2.setText(Double.toString((Double)realscore2sum/4));
                 realscore2sum=0;
                 if(how_many_subjects!=0){
-                    double A =Asum/how_many_subjects;
+                    double A =(double)Asum/how_many_subjects;
                     int scoresum = iscore+iscore2+iscore3+iscore4+iscore5+iscore6+iscore7+iscore8+iscore9+iscore10+iscore11;
                     double avgsum = iavg+iavg2+iavg3+iavg4+iavg5+iavg6+iavg7+iavg8+iavg9+iavg10+iavg11;
                     double stansum = istan+istan2+istan3+istan4+istan5+istan6+istan7+istan8+istan9+istan10+istan11;
@@ -276,7 +346,7 @@ public class Fragment_2 extends Fragment {
                     Z=Math.round(Z*100.0)/100.0;
                     double FZ=NORMSDIST(Z);
                     FZ =Math.round(FZ*100000000.0)/100000000.0;
-                    double realscorewow=10+Asum/how_many_subjects * 2 +FZ*10;
+                    double realscorewow=10+A * 2 +FZ*10;
                     realscorewow = Math.round(realscorewow*1000.0)/1000.0;
                     realscore1.setText(Double.toString(realscorewow));
                     ((MainActivity)getActivity()).twotwo=realscorewow;
@@ -291,40 +361,110 @@ public class Fragment_2 extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iscore = Integer.parseInt(score.getText().toString()); //점수 정의
-                iscore2 = Integer.parseInt(score2.getText().toString());
-                iscore3 = Integer.parseInt(score3.getText().toString());
-                iscore4 = Integer.parseInt(score4.getText().toString());
-                iscore5 = Integer.parseInt(score5.getText().toString());
-                iscore6 = Integer.parseInt(score6.getText().toString());
-                iscore7 = Integer.parseInt(score7.getText().toString());
-                iscore8 = Integer.parseInt(score8.getText().toString());
-                iscore9 = Integer.parseInt(score9.getText().toString());
-                iscore10 = Integer.parseInt(score10.getText().toString());
-                iscore11 = Integer.parseInt(score11.getText().toString());
+                if(score.length()==0) iscore=0;
+                else{
+                    iscore = Integer.parseInt(score.getText().toString()); //점수 정의
+                }
+                if(score2.length()==0) iscore2=0;
+                else{
+                    iscore2 = Integer.parseInt(score2.getText().toString());}
+                if(score3.length()==0) iscore3=0;
+                else{
+                    iscore3 = Integer.parseInt(score3.getText().toString());}
+                if(score4.length()==0) iscore4=0;
+                else{
+                    iscore4 = Integer.parseInt(score4.getText().toString());}
+                if(score5.length()==0) iscore5=0;
+                else{
+                    iscore5 = Integer.parseInt(score5.getText().toString());}
+                if(score6.length()==0) iscore6=0;
+                else{
+                    iscore6 = Integer.parseInt(score6.getText().toString());}
+                if(score7.length()==0) iscore7=0;
+                else{
+                    iscore7 = Integer.parseInt(score7.getText().toString());}
+                if(score8.length()==0) iscore8=0;
+                else{
+                    iscore8 = Integer.parseInt(score8.getText().toString());}
+                if(score9.length()==0) iscore9=0;
+                else{
+                    iscore9 = Integer.parseInt(score9.getText().toString());}
+                if(score10.length()==0) iscore10=0;
+                else{
+                    iscore10 = Integer.parseInt(score10.getText().toString());}
+                if(score11.length()==0) iscore11=0;
+                else{
+                    iscore11 = Integer.parseInt(score11.getText().toString());}
 
-                iavg = Double.parseDouble(avg1.getText().toString());//평균과 표준편차 정의
-                iavg2 = Double.parseDouble(avg2.getText().toString());
-                iavg3 = Double.parseDouble(avg3.getText().toString());
-                iavg4 = Double.parseDouble(avg4.getText().toString());
-                iavg5 = Double.parseDouble(avg5.getText().toString());
-                iavg6 = Double.parseDouble(avg6.getText().toString());
-                iavg7 = Double.parseDouble(avg7.getText().toString());
-                iavg8 = Double.parseDouble(avg8.getText().toString());
-                iavg9 = Double.parseDouble(avg9.getText().toString());
-                iavg10 = Double.parseDouble(avg10.getText().toString());
-                iavg11 = Double.parseDouble(avg11.getText().toString());
-                istan = Double.parseDouble(stan1.getText().toString());
-                istan2 = Double.parseDouble(stan2.getText().toString());
-                istan3 = Double.parseDouble(stan3.getText().toString());
-                istan4 = Double.parseDouble(stan4.getText().toString());
-                istan5 = Double.parseDouble(stan5.getText().toString());
-                istan6 = Double.parseDouble(stan6.getText().toString());
-                istan7 = Double.parseDouble(stan7.getText().toString());
-                istan8 = Double.parseDouble(stan8.getText().toString());
-                istan9 = Double.parseDouble(stan9.getText().toString());
-                istan10 = Double.parseDouble(stan10.getText().toString());
-                istan11 = Double.parseDouble(stan11.getText().toString());
+                if(avg1.length()==0) iavg=0;
+                else {
+                    iavg = Double.parseDouble(avg1.getText().toString());//평균과 표준편차 정의
+                }
+                if(avg2.length()==0) iavg2=0;
+                else{
+                    iavg2 = Double.parseDouble(avg2.getText().toString());}
+                if(avg3.length()==0) iavg3=0;
+                else{
+                    iavg3 = Double.parseDouble(avg3.getText().toString());}
+                if(avg4.length()==0) iavg4=0;
+                else{
+                    iavg4 = Double.parseDouble(avg4.getText().toString());}
+                if(avg5.length()==0) iavg5=0;
+                else{
+                    iavg5 = Double.parseDouble(avg5.getText().toString());}
+                if(avg6.length()==0) iavg6=0;
+                else{
+                    iavg6 = Double.parseDouble(avg6.getText().toString());}
+                if(avg7.length()==0) iavg7=0;
+                else{
+                    iavg7 = Double.parseDouble(avg7.getText().toString());}
+                if(avg8.length()==0) iavg8=0;
+                else{
+                    iavg8 = Double.parseDouble(avg8.getText().toString());}
+                if(avg9.length()==0) iavg9=0;
+                else{
+                    iavg9 = Double.parseDouble(avg9.getText().toString());}
+                if(avg10.length()==0) iavg10=0;
+                else{
+                    iavg10 = Double.parseDouble(avg10.getText().toString());}
+                if(avg11.length()==0) iavg11=0;
+                else{
+                    iavg11 = Double.parseDouble(avg11.getText().toString());}
+
+                if(stan1.length()==0) istan=0;
+                else{
+                    istan = Double.parseDouble(stan1.getText().toString());}
+                if(stan2.length()==0) istan2=0;
+                else{
+                    istan2 = Double.parseDouble(stan2.getText().toString());}
+                if(stan3.length()==0) istan3=0;
+                else{
+                    istan3 = Double.parseDouble(stan3.getText().toString());}
+                if(stan4.length()==0) istan4=0;
+                else{
+                    istan4 = Double.parseDouble(stan4.getText().toString());}
+                if(stan5.length()==0) istan5=0;
+                else{
+                    istan5 = Double.parseDouble(stan5.getText().toString());}
+                if(stan6.length()==0) istan6=0;
+                else{
+                    istan6 = Double.parseDouble(stan6.getText().toString());}
+                if(stan7.length()==0) istan7=0;
+                else{
+                    istan7 = Double.parseDouble(stan7.getText().toString());}
+                if(stan8.length()==0) istan8=0;
+                else{
+                    istan8 = Double.parseDouble(stan8.getText().toString());}
+                if(stan9.length()==0) istan9=0;
+                else{
+                    istan9 = Double.parseDouble(stan9.getText().toString());}
+                if(stan10.length()==0) istan10=0;
+                else{
+                    istan10 = Double.parseDouble(stan10.getText().toString());}
+
+                if(stan11.length()==0) istan11=0;
+                else{
+                    istan11 = Double.parseDouble(stan11.getText().toString());}
 
                 Intent intent = new Intent(getActivity(),NewActivity2.class);
                 intent.putExtra("one",(double)iscore);
