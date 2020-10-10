@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_calculator"
-        android:label="중학교 내신 산출기"
+        android:label="2021 중학교 내신 산출기"
         android:roundIcon="@mipmap/ic_launcher_calculator_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
