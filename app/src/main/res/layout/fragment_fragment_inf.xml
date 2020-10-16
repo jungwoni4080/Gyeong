@@ -235,7 +235,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:background="#00000000"
-                    android:text="디미고로 넘어가기" />
+                    android:text="디미고 성적 분석하기" />
 
                 <View
                     android:id="@+id/view5"
