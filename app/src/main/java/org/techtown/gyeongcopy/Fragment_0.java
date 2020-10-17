@@ -34,6 +34,7 @@ public class Fragment_0 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_fragment_0,null);
+        //사용할 모든 Textview을
         one1=(TextView)view.findViewById(R.id.score);
         one2=(TextView)view.findViewById(R.id.score2);
         one3=(TextView)view.findViewById(R.id.score3);
@@ -44,6 +45,7 @@ public class Fragment_0 extends Fragment {
         one8=(TextView)view.findViewById(R.id.score8);
         one9=(TextView)view.findViewById(R.id.score9);
 
+        //다른 창에서 계산한 값을 불러운다
         twoone=((MainActivity)getActivity()).twoone;
         twotwo=((MainActivity)getActivity()).twotwo;
         throne=((MainActivity)getActivity()).throne;
@@ -56,7 +58,9 @@ public class Fragment_0 extends Fragment {
         sangbong=((MainActivity)getActivity()).sangbong;
         sangchul=((MainActivity)getActivity()).sangchul;
         sanghak=((MainActivity)getActivity()).sanghak;
-        double sumsumsum=artpe1+artpe2+artpe3;
+
+        //double sumsumsum=artpe1+artpe2+artpe3;
+        //체육, 예술 점수를 합하고, Textview에 점수를 띄움
         chaeyae=(Double)(artpe1+artpe2+artpe3+artpe4);
         chaeyae=Math.round(chaeyae*1000.0)/1000.0;
         one1.setText(Double.toString(twoone));
@@ -68,18 +72,21 @@ public class Fragment_0 extends Fragment {
         one7.setText(Double.toString(sangbong));
         one8.setText(Double.toString(sanghak));
 
-
+        //계산하기 버튼
         Button button = view.findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //버튼을 누르면 총 점수가 나온다
                 double stringstring=twoone+twotwo+throne+thrtwo+chaeyae+sangchul+sangbong+sanghak;
                 one9.setText(Double.toString(Math.round(stringstring*1000.0)/1000.0));
             }
         });
+        //성적 분석하기 버튼
         Button button3 = view.findViewById(R.id.greatbutton);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
+            //각 학기의 점수를 그래프 창으로 보내주고, 그래프 창을 띄움
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),NewActivity0.class);
                 intent.putExtra("one",twoone);

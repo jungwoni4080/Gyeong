@@ -41,6 +41,7 @@ public class Fragment_inf extends Fragment {
         intent23.addCategory(Intent.CATEGORY_LAUNCHER);
         intent23.setComponent(compName);
         startActivity(intent23); */
+        //디미고 내신 계산기 앱으로 이동시킴
         final Intent intent = getContext().getPackageManager().getLaunchIntentForPackage("org.techtown.practiveta");
         Button dmgbtm = (Button) view.findViewById(R.id.button3);
         dmgbtm.setOnClickListener(new View.OnClickListener() {

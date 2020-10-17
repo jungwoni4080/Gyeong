@@ -31,7 +31,7 @@ public class Fragment_5 extends Fragment {
     TextView textView, textView2,result1,result2,textView45;
     EditText first,second,third,fourth,fifth,sixth;
     TextView printscore1,printscore2,printscore3;
-    String[] items= {"0회","1회","2회","3회","4회","5회","6회 이상"};
+    String[] items= {"0회","1회","2회","3회","4회","5회","6회 이상"}; //후에 스피너에 들어갈 아이템이다
     String[] items3= {"0회","1회","2회","3회","4회","5회","6회 이상"};
     String[] items5= {"0회","1회","2회","3회","4회","5회","6회 이상"};
 
@@ -47,7 +47,7 @@ public class Fragment_5 extends Fragment {
 
 
 
-        first = (EditText)view.findViewById(R.id.first);
+        first = (EditText)view.findViewById(R.id.first); //필요한 모든것을 가져온다
         second = (EditText)view.findViewById(R.id.second);
         third = (EditText)view.findViewById(R.id.third);
         fourth = (EditText)view.findViewById(R.id.fourth);
@@ -56,7 +56,7 @@ public class Fragment_5 extends Fragment {
         printscore1 = view.findViewById(R.id.printscore1);
         printscore2 = view.findViewById(R.id.printscore2);
         printscore3 = view.findViewById(R.id.printscore3);
-        final Spinner spinner1 = (Spinner)view.findViewById(R.id.spinner1);
+        final Spinner spinner1 = (Spinner)view.findViewById(R.id.spinner1);//스피너 준비작업
         final Spinner spinner3 = (Spinner)view.findViewById(R.id.spinner3);
         final Spinner spinner5 = (Spinner)view.findViewById(R.id.spinner5);
         ArrayAdapter<String> adapterSpinner1 = new ArrayAdapter(this.getActivity(), R.layout.spinner_item);
@@ -72,15 +72,16 @@ public class Fragment_5 extends Fragment {
         spinner1.setAdapter(adapterSpinner1);
         spinner3.setAdapter(adapterSpinner3);
         spinner5.setAdapter(adapterSpinner5);
-        adapterSpinner1.addAll(items);
+        adapterSpinner1.addAll(items); //스피너에 들어갈 이름들
         adapterSpinner3.addAll(items3);
         adapterSpinner5.addAll(items5);
 
+        //무단 결석 수를 선택
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String location = spinner1.getSelectedItem().toString();
-                if(location==items[0]){
+                if(location==items[0]){ //1학년 무단 결석 수 선택
                     one = 6;
                 }
                 else if(location==items[1]){
@@ -107,11 +108,12 @@ public class Fragment_5 extends Fragment {
                 textView.setText("");
             }
         });
+        //무단 결석 수
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String location = spinner3.getSelectedItem().toString();
-                if(location==items[0]){
+                if(location==items[0]){ //2학년 무단 결석 수 선택
                     three = 7;
                 }
                 else if(location==items[1]){
@@ -127,10 +129,10 @@ public class Fragment_5 extends Fragment {
                     three = 4.2;
                 }
                 else if(location==items[5]){
-                    three = -4;
+                    three = 3.6;
                 }
                 else {
-                    three = 3.6;
+                    three = 2.8;
                 }
 
             }
@@ -143,7 +145,7 @@ public class Fragment_5 extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String location = spinner5.getSelectedItem().toString();
-                if(location==items5[0]){
+                if(location==items5[0]){ //3학년 무단결석 수 선택
                     five = 7;
                 }
                 else if(location==items5[1]){
@@ -171,7 +173,7 @@ public class Fragment_5 extends Fragment {
             }
         });
 
-
+        //구 봉사점수 시스템
         //int bongsa = Integer.parseInt(fourth.getText().toString());
         /*if(bongsa<=4){
             bongsajumsu=8;
@@ -212,8 +214,6 @@ public class Fragment_5 extends Fragment {
         else{
             bongsajumsu=20;
         }*/
-        int sang = Integer.parseInt(fifth.getText().toString());
-        int imwon = Integer.parseInt(sixth.getText().toString());
         //int bongsa = Integer.parseInt(fourth.getText().toString());
         //bongsajumsu=bongsa1(bongsa);
         final int[] yesstart = {1};
@@ -221,8 +221,9 @@ public class Fragment_5 extends Fragment {
         btn_server.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //라디오 버튼 해제
                 //final int bongsa = Integer.parseInt(fourth.getText().toString());
-                //final이 뭔진 모르겠다
                 /*if(yesstart[0] ==1) {
                     int bongsa = Integer.parseInt(fourth.getText().toString());
                     bongsajumsu = bongsa1(bongsa);
@@ -232,6 +233,7 @@ public class Fragment_5 extends Fragment {
                 }*/
                 int bongsa = Integer.parseInt(fourth.getText().toString());
                 bongsajumsu=bongsa2(bongsa);
+                //라디오 버튼 해제
                 /*Queen.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -285,28 +287,29 @@ public class Fragment_5 extends Fragment {
                 else{
                     bongsajumsu=20;
                 }*/
+                //상 임원 개수, 무단 지각·조퇴·결과 수를 3으로 나눔(3번에 하나의 무단 결석으로 인정)
                 int sang = Integer.parseInt(fifth.getText().toString());
                 int imwon = Integer.parseInt(sixth.getText().toString());
                 int chul1 = Integer.parseInt(first.getText().toString())/3;
                 int chul2 = Integer.parseInt(second.getText().toString())/3;
                 int chul3 = Integer.parseInt(third.getText().toString())/3;
-                double one1=one;
-                double one2=three;
-                double one3=five;
-                double hakgyo = 8+imwon*0.1+sang*0.5;
-                if(hakgyo>10){
+                double one1=one; //1학년 무단 결석 점수
+                double one2=three; //2학년 무단 결석 점수
+                double one3=five; //3학년 무단 결석 점수
+                double hakgyo = 8+imwon*0.1+sang*0.5; //학교활동 점수 계산
+                if(hakgyo>10){ //여러가지 이유로 10점이 넘을경우 10점으로 취급
                     hakgyo=10;
                 }
-                one1=one1-chul1*0.7;
+                one1=one1-chul1*0.7; //무단 결석과 무단 결과를 같이 계산함 (출결 점수 계산)
                 one2=one2-chul2*0.7;
                 one3=one3-chul3*0.7;
 
-                printscore1.setText(Double.toString(one1+one2+one3));
-                ((MainActivity)getActivity()).sangchul=one1+one2+one3;
-                printscore2.setText(Integer.toString(bongsajumsu));
-                ((MainActivity)getActivity()).sangbong=bongsajumsu;
-                printscore3.setText(Double.toString(hakgyo));
-                ((MainActivity)getActivity()).sanghak=hakgyo;
+                printscore1.setText(Double.toString(one1+one2+one3)); //출결 점수에 값 넣기
+                ((MainActivity)getActivity()).sangchul=one1+one2+one3; // 최종 결과 창에 값 보냄
+                printscore2.setText(Integer.toString(bongsajumsu)); //봉사점수에 값 넣기
+                ((MainActivity)getActivity()).sangbong=bongsajumsu; // 최종 결과 창에 값 보냄
+                printscore3.setText(Double.toString(hakgyo)); // 학교활동에 값 넣기
+                ((MainActivity)getActivity()).sanghak=hakgyo; // 최종 결과 창에 값 보냄
             }
         });
 

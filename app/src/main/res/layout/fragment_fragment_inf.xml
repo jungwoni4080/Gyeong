@@ -233,9 +233,10 @@
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="50dp"
                     android:background="#00000000"
-                    android:text="디미고 성적 분석하기" />
+                    android:text="디미고 점수 계산기 →"
+                    android:textColor="#FF1744" />
 
                 <View
                     android:id="@+id/view5"

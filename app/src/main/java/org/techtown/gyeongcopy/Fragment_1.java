@@ -24,19 +24,19 @@ import org.w3c.dom.Text;
  * A simple {@link Fragment} subclass.
  */
 public class Fragment_1 extends Fragment {
-    EditText score,score2,score3,score4,score5,score6,score7,score8,score9,score10,score11;
-    EditText avg1,avg2,avg3,avg4,avg5,avg6,avg7,avg8,avg9,avg10,avg11;
-    EditText stan1,stan2,stan3,stan4,stan5,stan6,stan7,stan8,stan9,stan10,stan11;
+    EditText score,score2,score3,score4,score5,score6,score7,score8,score9,score10,score11; //원점수를 가져옴
+    EditText avg1,avg2,avg3,avg4,avg5,avg6,avg7,avg8,avg9,avg10,avg11; //평균을 가져움
+    EditText stan1,stan2,stan3,stan4,stan5,stan6,stan7,stan8,stan9,stan10,stan11; //표준편차 가져옴
     EditText ac12, ac13,ac14;
-    TextView ac,ac2,ac3,ac4,ac5,ac6,ac7,ac8,ac9,ac10,ac11,realscore1,realscore2;
-    int how_many_subjects=0;
-    int iscore,iscore2,iscore3,iscore4,iscore5,iscore6,iscore7,iscore8,iscore9,iscore10,iscore11;
+    TextView ac,ac2,ac3,ac4,ac5,ac6,ac7,ac8,ac9,ac10,ac11,realscore1,realscore2; //성취도(Textview)랑, 일반 교과점수, 예체 교과점수 가져옴
+    int how_many_subjects=0; //과목이 몇개인지 셈
+    int iscore,iscore2,iscore3,iscore4,iscore5,iscore6,iscore7,iscore8,iscore9,iscore10,iscore11; //score을 숫자값으로 바꿔 넣을 곳이다
 
 
-    double iavg,iavg2,iavg3,iavg4,iavg5,iavg6,iavg7,iavg8,iavg9,iavg10,iavg11;
-    double istan,istan2,istan3,istan4,istan5,istan6,istan7,istan8,istan9,istan10,istan11;
+    double iavg,iavg2,iavg3,iavg4,iavg5,iavg6,iavg7,iavg8,iavg9,iavg10,iavg11; //avg를 숫자로 바꿔서 넣을 곳이다
+    double istan,istan2,istan3,istan4,istan5,istan6,istan7,istan8,istan9,istan10,istan11; //stan(편차)값을 숫자로 바꿔 넣을 곳이다.
 
-
+//미술, 체육, 음악의 스피너(여러 가지 중에 선택)하도록 만들음
     int hmA=0,hmB=0,hmC=0;
     String items[] = {"A","B","C"};
     String items2[] = {"A","B","C"};
@@ -53,7 +53,7 @@ public class Fragment_1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_fragment_1, container, false);
-        score = view.findViewById(R.id.score);
+        score = view.findViewById(R.id.score); //모든 원점수를 받아온다.
         score2 = view.findViewById(R.id.score2);
         score3 = view.findViewById(R.id.score3);
         score4 = view.findViewById(R.id.score4);
@@ -64,7 +64,7 @@ public class Fragment_1 extends Fragment {
         score9 = view.findViewById(R.id.score9);
         score10 = view.findViewById(R.id.score10);
         score11 = view.findViewById(R.id.score11);
-        avg1 = view.findViewById(R.id.avg1);
+        avg1 = view.findViewById(R.id.avg1); //모든 평균을 받아온다
         avg2 = view.findViewById(R.id.avg2);
         avg3 = view.findViewById(R.id.avg3);
         avg4 = view.findViewById(R.id.avg4);
@@ -75,7 +75,7 @@ public class Fragment_1 extends Fragment {
         avg9 = view.findViewById(R.id.avg9);
         avg10 = view.findViewById(R.id.avg10);
         avg11 = view.findViewById(R.id.avg11);
-        stan1 = view.findViewById(R.id.stan1);
+        stan1 = view.findViewById(R.id.stan1); //모든 표준편차를 받아온다.
         stan2 = view.findViewById(R.id.stan2);
         stan3 = view.findViewById(R.id.stan3);
         stan4 = view.findViewById(R.id.stan4);
@@ -86,7 +86,7 @@ public class Fragment_1 extends Fragment {
         stan9 = view.findViewById(R.id.stan9);
         stan10 = view.findViewById(R.id.stan10);
         stan11 = view.findViewById(R.id.stan11);
-        ac = view.findViewById(R.id.ac);
+        ac = view.findViewById(R.id.ac); // 모든 성취도를 받아온다.
         ac2 = view.findViewById(R.id.ac2);
         ac3 = view.findViewById(R.id.ac3);
         ac4 = view.findViewById(R.id.ac4);
@@ -100,12 +100,11 @@ public class Fragment_1 extends Fragment {
         //ac12 = view.findViewById(R.id.ac12);
         //ac13 = view.findViewById(R.id.ac13);
         //ac14 = view.findViewById(R.id.ac14);
-        realscore1 = view.findViewById(R.id.realscore);
-        realscore2= view.findViewById(R.id.realscore2);
+        realscore1 = view.findViewById(R.id.realscore); //일반 교과 점수를 넣을 공간
+        realscore2= view.findViewById(R.id.realscore2); //예체 교과 점수를 넣을 공간
 
 
-
-
+        //스피너 준비 과정
         final Spinner spinner1=view.findViewById(R.id.spinner);
         final Spinner spinner2=view.findViewById(R.id.spinner2);
         final Spinner spinner3=view.findViewById(R.id.spinner3);
@@ -116,19 +115,18 @@ public class Fragment_1 extends Fragment {
         adapterSpinner2.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         adapterSpinner3.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
-
         adapterSpinner1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapterSpinner2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapterSpinner3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-
         spinner1.setAdapter(adapterSpinner1);
         spinner2.setAdapter(adapterSpinner2);
         spinner3.setAdapter(adapterSpinner3);
-        adapterSpinner1.addAll(items);
+        adapterSpinner1.addAll(items); //스피너에 들어갈 요소들을 넣음.
         adapterSpinner2.addAll(items2);
         adapterSpinner3.addAll(items3);
 
+        //스피너에 선택된 값에 따라 성취도 값이 선택됨
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -148,6 +146,8 @@ public class Fragment_1 extends Fragment {
 
             }
         });
+
+        //성취도에 선택된 것에 따라 성취도 결정됨
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -167,6 +167,8 @@ public class Fragment_1 extends Fragment {
 
             }
         });
+
+        //스피너에 선택된 것에 따라 성취도가 결정됨
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -193,7 +195,7 @@ public class Fragment_1 extends Fragment {
             @Override
             public void onClick(View v) {
                 how_many_subjects=0;
-                if(score.length()==0) iscore=0;
+                if(score.length()==0) iscore=0; //점수가 비어있다면 없는 과목으로 치고, 아니라면 점수 값을 넣는다.
                 else{
                 iscore = Integer.parseInt(score.getText().toString()); //점수 정의
                 }
@@ -229,7 +231,7 @@ public class Fragment_1 extends Fragment {
                 iscore11 = Integer.parseInt(score11.getText().toString());}
 
 
-                String iacscore = whatschar(iscore);
+                String iacscore = whatschar(iscore); //점수에 따라 성취도를 정해줌
                 String iacscore2 = whatschar(iscore2);
                 String iacscore3 = whatschar(iscore3);
                 String iacscore4 = whatschar(iscore4);
@@ -241,7 +243,7 @@ public class Fragment_1 extends Fragment {
                 String iacscore10 = whatschar(iscore10);
                 String iacscore11 = whatschar(iscore11);
 
-                ac.setText(iacscore); //여기서 오류 (해결_)
+                ac.setText(iacscore); //성취도 TextView에다 성취도를 넣음
                 ac2.setText(iacscore2);
                 ac3.setText(iacscore3);
                 ac4.setText(iacscore4);
@@ -253,7 +255,7 @@ public class Fragment_1 extends Fragment {
                 ac10.setText(iacscore10);
                 ac11.setText(iacscore11);
 
-                int iactoint = chartoint(iacscore);
+                int iactoint = chartoint(iacscore); //성취도 점수를 구해줌
                 int iactoint2 = chartoint(iacscore2);
                 int iactoint3 = chartoint(iacscore3);
                 int iactoint4 = chartoint(iacscore4);
@@ -264,9 +266,9 @@ public class Fragment_1 extends Fragment {
                 int iactoint9 = chartoint(iacscore9);
                 int iactoint10 = chartoint(iacscore10);
                 int iactoint11 = chartoint(iacscore11);
-                int Asum=iactoint+iactoint2+iactoint3+iactoint4+iactoint5+iactoint6+iactoint7+iactoint8+iactoint9+iactoint10+iactoint11;
+                int Asum=iactoint+iactoint2+iactoint3+iactoint4+iactoint5+iactoint6+iactoint7+iactoint8+iactoint9+iactoint10+iactoint11; //모든 성취도값의 합을 구함
                 //ac.setText(Character((char)(70-)));
-                if(avg1.length()==0) iavg=0;
+                if(avg1.length()==0) iavg=0; //평균값이 비어있으면 없는 과목 처리하고, 값이 있다면 값을 넣는다
                 else {
                     iavg = Double.parseDouble(avg1.getText().toString());//평균과 표준편차 정의
                 }
@@ -301,7 +303,7 @@ public class Fragment_1 extends Fragment {
                 else{
                 iavg11 = Double.parseDouble(avg11.getText().toString());}
 
-                if(stan1.length()==0) istan=0;
+                if(stan1.length()==0) istan=0; //표준편차 값이 비어있다면 없는 과목 처리하고, 값이 있다면 넣는다
                 else{
                 istan = Double.parseDouble(stan1.getText().toString());}
                 if(stan2.length()==0) istan2=0;
@@ -336,12 +338,12 @@ public class Fragment_1 extends Fragment {
                 else{
                 istan11 = Double.parseDouble(stan11.getText().toString());}
 
-                int iactoint12 = howmany1(iac12);
+                int iactoint12 = howmany1(iac12); //예체 과목의 성취도 점수를 따로 계산
                 int iactoint13 = howmany1(iac13);
                 int iactoint14 = howmany1(iac14);
-                double realscore2sum = 10+20*((double)(iactoint12+iactoint13+iactoint14)/9);
+                double realscore2sum = 10+20*((double)(iactoint12+iactoint13+iactoint14)/9); //예체능 점수를 구한다.
                 realscore2sum=Math.round(realscore2sum*100000.0)/100000.0;
-                howmany(iscore); //몇 개의 값이 입력되어있는지 확인
+                howmany(iscore); //몇 개의 과목이 있는지 확인
                 howmany(iscore2);
                 howmany(iscore3);
                 howmany(iscore4);
@@ -353,10 +355,11 @@ public class Fragment_1 extends Fragment {
                 howmany(iscore10);
                 howmany(iscore11);
                 //((MainActivity)getActivity()).artpe+=realscore2sum;
-                ((MainActivity)getActivity()).artpe1=(Double)(realscore2sum)/4;
-                realscore2.setText(Double.toString((Double)realscore2sum/4));
+                ((MainActivity)getActivity()).artpe1=(Double)(realscore2sum)/4; //예체 과목의 점수를Mainactivity로 값을 넘겨서, 처음 창에서 최종 점수를 볼 수 있게 함
+                realscore2.setText(Double.toString((Double)realscore2sum/4)); //예체 과목 점수를 결과값에 넣는다
                 realscore2sum=0;
-                if(how_many_subjects!=0){
+                if(how_many_subjects!=0){ //과목이 하나 이상이여야지 실행됨
+                    //일반 교과 점수를 구하는 과정
                     double A =(double)Asum/how_many_subjects;
                     int scoresum = iscore+iscore2+iscore3+iscore4+iscore5+iscore6+iscore7+iscore8+iscore9+iscore10+iscore11;
                     double avgsum = iavg+iavg2+iavg3+iavg4+iavg5+iavg6+iavg7+iavg8+iavg9+iavg10+iavg11;
@@ -376,8 +379,8 @@ public class Fragment_1 extends Fragment {
 
                     double realscorewow=10+A*2.0+FZ*10;
                     realscorewow = Math.round(realscorewow*1000.0)/1000.0;
-                    realscore1.setText(Double.toString(realscorewow));
-                    ((MainActivity)getActivity()).twoone=realscorewow;
+                    realscore1.setText(Double.toString(realscorewow)); //결과값에 일반 교과 점수를 집어넣음
+                    ((MainActivity)getActivity()).twoone=realscorewow; //MainActivity에 값을 넘겨서 최종 결과 창에서 값을 받을 수 있게 함
                 }
 
 
@@ -385,10 +388,11 @@ public class Fragment_1 extends Fragment {
 
             }
         });
-        Button button4 = view.findViewById(R.id.button4);
+        Button button4 = view.findViewById(R.id.button4); //그래프로 넘어가는 버튼
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(score.length()==0) iscore=0;
                 else{
                     iscore = Integer.parseInt(score.getText().toString()); //점수 정의
@@ -494,6 +498,7 @@ public class Fragment_1 extends Fragment {
                 else{
                     istan11 = Double.parseDouble(stan11.getText().toString());}
 
+                //값을 그래프 Fragment로 보낸다.
                 Intent intent = new Intent(getActivity(),NewActivity1.class);
                 intent.putExtra("one",(double)iscore);
                 intent.putExtra("two",(double)iscore2);
@@ -541,7 +546,7 @@ public class Fragment_1 extends Fragment {
     }
 
 
-    public static double NORMSDIST(double z) { //정상작동
+    public static double NORMSDIST(double z) { //Normdist함수를 사용하기 위해 두었다.
         // this guards against overflow
         if (z > 6)
             return 1;

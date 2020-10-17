@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = new Intent(MainActivity.this,NewActivity0.class);
-        intent.putExtra("one",twoone);
+        intent.putExtra("one",twoone); //점수를 모두 최종 결과창에 보낸다
         intent.putExtra("one2",twotwo);
         intent.putExtra("one3",throne);
         intent.putExtra("one4",thrtwo);
         //Tablayout
-        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabs = (TabLayout) findViewById(R.id.tabs); //탭 이름을 모두 만든다
         tabs.addTab(tabs.newTab().setText("결과"));
         tabs.addTab(tabs.newTab().setText("정보"));
         tabs.addTab(tabs.newTab().setText("2-1"));

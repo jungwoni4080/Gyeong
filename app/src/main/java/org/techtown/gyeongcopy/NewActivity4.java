@@ -29,14 +29,16 @@ import java.util.ArrayList;
 public class NewActivity4 extends AppCompatActivity {
     double scores[] = new double[11];
     double guk,doduk,sahwe,yuck,math,sci,giga,eng,one1,one2,one3;
+    //표시될 수 있는 과목의 배열
     String xxx[] = new String[] {"국어","도덕","사회","역사","수학","과학","기가","영어","선택","선택2","선택3"};
     int k=0;
+    //과목들의 평균, 표준편차, 점수 등
     double avg[] = new double[11];
     double stan[] = new double[11];
     TextView textView;
     String values[] = new String[11];
     int l=0;
-    LineChart chart;
+    LineChart chart;//라인차트를 이용해 비교해줌
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +84,7 @@ public class NewActivity4 extends AppCompatActivity {
         stan[10] = intent.getDoubleExtra("ele2",0.0);
 
 
-        scores[0]=guk; //0판별은다 됨
+        scores[0]=guk; //점수를 배열에 저장
         scores[1]=doduk;
         scores[2]=sahwe;
         scores[3]=yuck;
@@ -93,7 +95,7 @@ public class NewActivity4 extends AppCompatActivity {
         scores[8]=one1;
         scores[9]=one2;
         scores[10]=one3;
-//ㅁㄻㅇㄹㅇㅁㄹㅇㄻㄴㅇㄹ
+//차트를 먼저 만든 이유: 처음부터 그래프가 나오게 하기 위해서
         LineData data;
         int j;
         int length;
@@ -104,7 +106,7 @@ public class NewActivity4 extends AppCompatActivity {
         YAxis leftAxis;
         XAxis xAxis;
         j=0;
-        for(int i=0;i<11;i++){ //xxx에서 values로 옮기는건 다 잘 됨
+        for(int i=0;i<11;i++){ //점수가 0인것을 다 추려냄
             if(scores[i]!=0){
                 values[j]=xxx[i];
                 j++;
@@ -113,17 +115,17 @@ public class NewActivity4 extends AppCompatActivity {
         int lengths= j;
 
         chart=findViewById(R.id.chart);
-        chart.getDescription().setEnabled(false);
-        chart.setDragEnabled(true);
+        chart.getDescription().setEnabled(false);//설명 지우기
+        chart.setDragEnabled(true);//드래그 허용
         chart.setScaleEnabled(false);
         chart.animateXY(1000,1000,Easing.EaseOutSine,Easing.EaseOutSine);
 
-        chart.getAxisRight().setEnabled(false);
+        chart.getAxisRight().setEnabled(false);//오른쪽 면 비우기
 
 
         yValues = new ArrayList<>();
         k=0;
-        for(int i=0;i<=10;i++){
+        for(int i=0;i<=10;i++){//점수가 0이 아닌 과목만 추가하기
             if(scores[i]!=0) {
                 yValues.add(new Entry(k, (float) scores[i]));
                 k++;
@@ -149,9 +151,9 @@ public class NewActivity4 extends AppCompatActivity {
         YAxis rightAxis = chart.getAxisRight();
 
         //leftAxis.setSp
-        leftAxis.setAxisMinimum(0f);
-        leftAxis.setAxisMaximum(100f);
-        leftAxis.setLabelCount(5);
+        leftAxis.setAxisMinimum(0f);//그래프의 점수 최소는 0
+        leftAxis.setAxisMaximum(100f);//그래프의 점수 최대는 100
+        leftAxis.setLabelCount(5);//라벨은 모두 5개 (차이는 각각 20점)
         //final String values[] = new String[] {"국어","도덕","사회","역사","수학","과학","기가","영어","선택","선택2","선택3"};
         xAxis = chart.getXAxis();
         xAxis.setDrawGridLines(false);
@@ -171,7 +173,7 @@ public class NewActivity4 extends AppCompatActivity {
         chart.notifyDataSetChanged();
         chart.invalidate();
 
-//ㅇㄴㅁㄹㅇㅁㄴㄹㅇㅁㄴㄹㅇㅁㄴ
+//라디오 버튼 만들기
 
         j=0;
         RadioButton radiogaga = findViewById(R.id.someone);
@@ -179,12 +181,12 @@ public class NewActivity4 extends AppCompatActivity {
         RadioGroup Queen = findViewById(R.id.radio);
         //.clearCheck();
         //radiogaga.setChecked(true);
-        radiogaga.setChecked(true);
+        radiogaga.setChecked(true);//버튼이 선택되어있게 함
 
         Queen.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                LineData data;
+                LineData data;//라인차트 기본은 만들어둠
                 int j;
                 int length;
                 int k;
@@ -194,9 +196,9 @@ public class NewActivity4 extends AppCompatActivity {
                 YAxis leftAxis;
                 XAxis xAxis;
                 switch(checkedId){
-                    case R.id.someone:
+                    case R.id.someone://원점수 버튼을 누른 경우
                         j=0;
-                        for(int i=0;i<11;i++){ //xxx에서 values로 옮기는건 다 잘 됨
+                        for(int i=0;i<11;i++){ //점수가 0인 과목을 추려냄
                             if(scores[i]!=0){
                                 values[j]=xxx[i];
                                 j++;
@@ -215,7 +217,7 @@ public class NewActivity4 extends AppCompatActivity {
 
                         yValues = new ArrayList<>();
                         k=0;
-                        for(int i=0;i<=10;i++){
+                        for(int i=0;i<=10;i++){//점수가 0인 과목을 제외한 과목을 차트에 추가함
                             if(scores[i]!=0) {
                                 yValues.add(new Entry(k, (float) scores[i]));
                                 k++;
@@ -266,10 +268,10 @@ public class NewActivity4 extends AppCompatActivity {
 
 
 
-                    case R.id.stillloveyou:
+                    case R.id.stillloveyou://표준점수 버튼을 누른 경우
                         double min=500000,max=-5000000;
                         j=0;
-                        for(int i=0;i<11;i++){ //xxx에서 values로 옮기는건 다 잘 됨
+                        for(int i=0;i<11;i++){//점수가 0인 과목을 추려냄
                             if(scores[i]!=0){
                                 values[j]=xxx[i];
                                 j++;
@@ -281,7 +283,7 @@ public class NewActivity4 extends AppCompatActivity {
                         chart.getDescription().setEnabled(false);
                         chart.setDragEnabled(true);
                         chart.setScaleEnabled(false);
-                        chart.animateXY(1000,1000,Easing.EaseOutSine,Easing.EaseOutSine);
+                        chart.animateXY(1000,1000,Easing.EaseOutSine,Easing.EaseOutSine);//애니메이션 효과 추가
 
                         chart.getAxisRight().setEnabled(false);
 
@@ -289,7 +291,7 @@ public class NewActivity4 extends AppCompatActivity {
                         yValues = new ArrayList<>();
                         k=0;
                         for(int i=0;i<=10;i++){
-                            if(scores[i]!=0 && stan[i]!=0) {
+                            if(scores[i]!=0 && stan[i]!=0) {//최대값과 최소값 선별함
                                 if((scores[i]-avg[i])/stan[i] < min) min=(scores[i]-avg[i])/stan[i];
                                 if((scores[i]-avg[i])/stan[i] > max) max=(scores[i]-avg[i])/stan[i];
                                 yValues.add(new Entry(k, (float)((scores[i]-avg[i])/stan[i])));
@@ -319,7 +321,7 @@ public class NewActivity4 extends AppCompatActivity {
 
 
 
-
+                        //최댓값과 최솟값을 기준으로 표준점수 그래프를 만듦
                         leftAxis.setAxisMinimum((float)Math.floor(min));
                         leftAxis.setAxisMaximum((float)Math.ceil(max)); //여기를 수정
                         leftAxis.setLabelCount(10);

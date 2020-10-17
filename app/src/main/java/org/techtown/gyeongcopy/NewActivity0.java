@@ -46,7 +46,7 @@ public class NewActivity0 extends AppCompatActivity /*implements View.OnClickLis
         //  setSupportActionBar(mytoolbar);
 
         Intent intent = getIntent();
-        one = intent.getDoubleExtra("one",0.0);
+        one = intent.getDoubleExtra("one",0.0); //2-1학기 창에서 넘긴 점수를 받는다
         two= intent.getDoubleExtra("two",0.0);
         thr = intent.getDoubleExtra("thr",0.0);
         fou = intent.getDoubleExtra("fou",0.0);
@@ -74,13 +74,13 @@ public class NewActivity0 extends AppCompatActivity /*implements View.OnClickLis
         chart.setWebAlpha(100);*/
 
 
-        RadarDataSet dataSet1 = new RadarDataSet(dataValues1(),"학기별 성적");
+        RadarDataSet dataSet1 = new RadarDataSet(dataValues1(),"학기별 성적"); //차트의 종류는 레이더 차트
         dataSet1.setColor(Color.RED);
 
         RadarData data = new RadarData();
         data.addDataSet(dataSet1);
 
-        String[] labels = {"2-1성적", "2-2성적","3-1성적", "3-2성적"};
+        String[] labels = {"2-1성적", "2-2성적","3-1성적", "3-2성적"}; //각 요소의 이름
         XAxis xAxis = chart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
         YAxis yAxis = chart.getYAxis();
@@ -111,7 +111,7 @@ public class NewActivity0 extends AppCompatActivity /*implements View.OnClickLis
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
-
+        //2개의 나가기 버튼 구현
         if(id==R.id.nagagi){
             Toast.makeText(this,"나가기", Toast.LENGTH_SHORT).show();
             //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -128,7 +128,7 @@ public class NewActivity0 extends AppCompatActivity /*implements View.OnClickLis
 
     private ArrayList<RadarEntry> dataValues1()
     {
-        ArrayList<RadarEntry> dataVals = new ArrayList<RadarEntry>();
+        ArrayList<RadarEntry> dataVals = new ArrayList<RadarEntry>(); //그래프에 넣을 값 지정
         dataVals.add(new RadarEntry((float)one));
         dataVals.add(new RadarEntry((float)two));
         dataVals.add(new RadarEntry((float)thr));

@@ -15,7 +15,7 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public Fragment getItem(int position) {
+    public Fragment getItem(int position) { //탭을 자유롭게 이동할 수 있게 함
         switch (position){
             case 0:
                 Fragment_0 tab0 = new Fragment_0();
