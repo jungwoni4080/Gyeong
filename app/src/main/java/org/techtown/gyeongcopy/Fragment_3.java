@@ -2,10 +2,12 @@ package org.techtown.gyeongcopy;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.techtown.gyeongcopy.R;
 
@@ -30,8 +33,9 @@ public class Fragment_3 extends Fragment {
     TextView ac,ac2,ac3,ac4,ac5,ac6,ac7,ac8,ac9,ac10,ac11,realscore1,realscore2; //성취도(Textview)랑, 일반 교과점수, 예체 교과점수 가져옴
     int how_many_subjects=0; //과목이 몇개인지 셈
     int iscore,iscore2,iscore3,iscore4,iscore5,iscore6,iscore7,iscore8,iscore9,iscore10,iscore11; //score을 숫자값으로 바꿔 넣을 곳이다
-
-
+    Button btn_save, btn_remove;
+    private SharedPreferences.Editor editor;
+    private SharedPreferences preferences;
     double iavg,iavg2,iavg3,iavg4,iavg5,iavg6,iavg7,iavg8,iavg9,iavg10,iavg11; //avg를 숫자로 바꿔서 넣을 곳이다
     double istan,istan2,istan3,istan4,istan5,istan6,istan7,istan8,istan9,istan10,istan11; //stan(편차)값을 숫자로 바꿔 넣을 곳이다.
 
@@ -101,7 +105,17 @@ public class Fragment_3 extends Fragment {
         //ac14 = view.findViewById(R.id.ac14);
         realscore1 = view.findViewById(R.id.realscore);//일반 교과 점수를 넣을 공간
         realscore2= view.findViewById(R.id.realscore2);//예체 교과 점수를 넣을 공간
+//값 저장
+        btn_remove=view.findViewById(R.id.btnRemove);
+        btn_save=view.findViewById(R.id.btnSave);
 
+
+        setListenerPreferencebtn();
+
+        preferences= PreferenceManager.getDefaultSharedPreferences(getActivity()); //this -> getActivity()
+        editor= preferences.edit();
+
+        initializeValue();
 //스피너 준비 과정
         final Spinner spinner1=view.findViewById(R.id.spinner);
         final Spinner spinner2=view.findViewById(R.id.spinner2);
@@ -627,6 +641,139 @@ public class Fragment_3 extends Fragment {
         if(str.contains("A")) return 3;
         else if(str.contains("B")) return 2;
         else return 1;
+    }
+    public void setListenerPreferencebtn()
+    {
+        View.OnClickListener Listener = new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Toast.makeText(getActivity(),"진짜버튼눌림", Toast.LENGTH_LONG).show();
+                switch(view.getId())
+                {
+                    //데이터 저장하기
+                    case R.id.btnSave:
+                        editor.putString("sc3", score.getText().toString());
+                        editor.putString("sc32", score2.getText().toString());
+                        editor.putString("sc33", score3.getText().toString());
+                        editor.putString("sc34", score4.getText().toString());
+                        editor.putString("sc35", score5.getText().toString());
+                        editor.putString("sc36", score6.getText().toString());
+                        editor.putString("sc37", score7.getText().toString());
+                        editor.putString("sc38", score8.getText().toString());
+                        editor.putString("sc39", score9.getText().toString());
+                        editor.putString("sc310", score10.getText().toString());
+                        editor.putString("sc311", score11.getText().toString());
+                        Toast.makeText(getActivity(),"editor실행",Toast.LENGTH_SHORT).show();
+                        editor.putString("av31", avg1.getText().toString());
+                        editor.putString("av32", avg2.getText().toString());
+                        editor.putString("av33", avg3.getText().toString());
+                        editor.putString("av34", avg4.getText().toString());
+                        editor.putString("av35", avg5.getText().toString());
+                        editor.putString("av36", avg6.getText().toString());
+                        editor.putString("av37", avg7.getText().toString());
+                        editor.putString("av38", avg8.getText().toString());
+                        editor.putString("av39", avg9.getText().toString());
+                        editor.putString("av310", avg10.getText().toString());
+                        editor.putString("av311", avg11.getText().toString());
+
+                        editor.putString("st31",stan1.getText().toString());
+                        editor.putString("st32",stan2.getText().toString());
+                        editor.putString("st33",stan3.getText().toString());
+                        editor.putString("st34",stan4.getText().toString());
+                        editor.putString("st35",stan5.getText().toString());
+                        editor.putString("st36",stan6.getText().toString());
+                        editor.putString("st37",stan7.getText().toString());
+                        editor.putString("st38",stan8.getText().toString());
+                        editor.putString("st39",stan9.getText().toString());
+                        editor.putString("st310",stan10.getText().toString());
+                        editor.putString("st311",stan11.getText().toString());
+                        editor.apply();
+                        break;
+                    //데이터 제거하기
+                    case R.id.btnRemove:
+                        editor.remove("sc3");
+                        editor.remove("sc32");
+                        editor.remove("sc33");
+                        editor.remove("sc34");
+                        editor.remove("sc35");
+                        editor.remove("sc36");
+                        editor.remove("sc37");
+                        editor.remove("sc38");
+                        editor.remove("sc39");
+                        editor.remove("sc310");
+                        editor.remove("sc311");
+
+                        editor.remove("av31");
+                        editor.remove("av32");
+                        editor.remove("av33");
+                        editor.remove("av34");
+                        editor.remove("av35");
+                        editor.remove("av36");
+                        editor.remove("av37");
+                        editor.remove("av38");
+                        editor.remove("av39");
+                        editor.remove("av310");
+                        editor.remove("av311");
+
+                        editor.remove("st31");
+                        editor.remove("st32");
+                        editor.remove("st33");
+                        editor.remove("st34");
+                        editor.remove("st35");
+                        editor.remove("st36");
+                        editor.remove("st37");
+                        editor.remove("st38");
+                        editor.remove("st39");
+                        editor.remove("st310");
+                        editor.remove("st311");
+                        editor.apply();
+                        initializeValue();
+                        break;
+                }
+            }
+        };
+        //Toast.makeText(getActivity(), "버튼 눌림", Toast.LENGTH_SHORT).show();
+        btn_save.setOnClickListener(Listener);
+        btn_remove.setOnClickListener(Listener);
+    }
+    public void initializeValue()
+    {
+        //가설: setText는 모두 String형으로 한다
+        score.setText(preferences.getString("sc3", "0"));
+        score2.setText(preferences.getString("sc32", "0"));
+        score3.setText(preferences.getString("sc33", "0"));
+        score4.setText(preferences.getString("sc34", "0"));
+        score5.setText(preferences.getString("sc35", "0"));
+        score6.setText(preferences.getString("sc36", "0"));
+        score7.setText(preferences.getString("sc37", "0"));
+        score8.setText(preferences.getString("sc38", "0"));
+        score9.setText(preferences.getString("sc39", "0"));
+        score10.setText(preferences.getString("sc310", "0"));
+        score11.setText(preferences.getString("sc311", "0"));
+        avg1.setText(preferences.getString("av31","0"));
+        avg2.setText(preferences.getString("av32","0"));
+        avg3.setText(preferences.getString("av33","0"));
+        avg4.setText(preferences.getString("av34","0"));
+        avg5.setText(preferences.getString("av35","0"));
+        avg6.setText(preferences.getString("av36","0"));
+        avg7.setText(preferences.getString("av37","0"));
+        avg8.setText(preferences.getString("av38","0"));
+        avg9.setText(preferences.getString("av39","0"));
+        avg10.setText(preferences.getString("av310","0"));
+        avg11.setText(preferences.getString("av311","0"));
+        stan1.setText(preferences.getString("st31","0"));
+        stan2.setText(preferences.getString("st32","0"));
+        stan3.setText(preferences.getString("st33","0"));
+        stan4.setText(preferences.getString("st34","0"));
+        stan5.setText(preferences.getString("st35","0"));
+        stan6.setText(preferences.getString("st36","0"));
+        stan7.setText(preferences.getString("st37","0"));
+        stan8.setText(preferences.getString("st38","0"));
+        stan9.setText(preferences.getString("st39","0"));
+        stan10.setText(preferences.getString("st310","0"));
+        stan11.setText(preferences.getString("st311","0"));
+        Toast.makeText(getActivity(),"동기화됨", Toast.LENGTH_LONG).show();
     }
 }
 
