@@ -20,10 +20,6 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
                 android:background="#ffffff"
                 android:elevation="4dp"
                 android:gravity="center"
@@ -158,6 +154,8 @@
                     android:id="@+id/spinner1"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="center_vertical|center|center_horizontal"
                     android:gravity="center"
                     android:scrollbarSize="16dp" />
 
@@ -177,6 +175,8 @@
                     android:id="@+id/spinner3"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="center_vertical|center|center_horizontal"
                     android:gravity="center"
                     android:scrollbarSize="16dp" />
 
@@ -196,6 +196,8 @@
                     android:id="@+id/spinner5"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="center_vertical|center|center_horizontal"
                     android:gravity="center"
                     android:scrollbarSize="16dp" />
 

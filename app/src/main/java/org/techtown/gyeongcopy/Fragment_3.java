@@ -648,7 +648,7 @@ public class Fragment_3 extends Fragment {
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(getActivity(),"진짜버튼눌림", Toast.LENGTH_LONG).show();
+
                 switch(view.getId())
                 {
                     //데이터 저장하기
@@ -664,7 +664,7 @@ public class Fragment_3 extends Fragment {
                         editor.putString("sc39", score9.getText().toString());
                         editor.putString("sc310", score10.getText().toString());
                         editor.putString("sc311", score11.getText().toString());
-                        Toast.makeText(getActivity(),"editor실행",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),"값 저장됨", Toast.LENGTH_LONG).show();
                         editor.putString("av31", avg1.getText().toString());
                         editor.putString("av32", avg2.getText().toString());
                         editor.putString("av33", avg3.getText().toString());
@@ -703,7 +703,7 @@ public class Fragment_3 extends Fragment {
                         editor.remove("sc39");
                         editor.remove("sc310");
                         editor.remove("sc311");
-
+                        Toast.makeText(getActivity(),"값 삭제됨", Toast.LENGTH_LONG).show();
                         editor.remove("av31");
                         editor.remove("av32");
                         editor.remove("av33");
@@ -773,7 +773,7 @@ public class Fragment_3 extends Fragment {
         stan9.setText(preferences.getString("st39","0"));
         stan10.setText(preferences.getString("st310","0"));
         stan11.setText(preferences.getString("st311","0"));
-        Toast.makeText(getActivity(),"동기화됨", Toast.LENGTH_LONG).show();
+
     }
 }
 

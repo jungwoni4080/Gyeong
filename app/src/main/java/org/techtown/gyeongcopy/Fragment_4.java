@@ -644,11 +644,12 @@ public class Fragment_4 extends Fragment {
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(getActivity(),"진짜버튼눌림", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(),"진짜버튼눌림", Toast.LENGTH_LONG).show();
                 switch(view.getId())
                 {
                     //데이터 저장하기
                     case R.id.btnSave:
+                        Toast.makeText(getActivity(),"값 저장됨", Toast.LENGTH_SHORT).show();
                         editor.putString("sc4", score.getText().toString());
                         editor.putString("sc42", score2.getText().toString());
                         editor.putString("sc43", score3.getText().toString());
@@ -660,7 +661,7 @@ public class Fragment_4 extends Fragment {
                         editor.putString("sc49", score9.getText().toString());
                         editor.putString("sc410", score10.getText().toString());
                         editor.putString("sc411", score11.getText().toString());
-                        Toast.makeText(getActivity(),"editor실행",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),"값 저장됨", Toast.LENGTH_LONG).show();
                         editor.putString("av41", avg1.getText().toString());
                         editor.putString("av42", avg2.getText().toString());
                         editor.putString("av43", avg3.getText().toString());
@@ -688,6 +689,7 @@ public class Fragment_4 extends Fragment {
                         break;
                     //데이터 제거하기
                     case R.id.btnRemove:
+                        Toast.makeText(getActivity(),"값 삭제됨", Toast.LENGTH_SHORT).show();
                         editor.remove("sc4");
                         editor.remove("sc42");
                         editor.remove("sc43");
@@ -699,7 +701,7 @@ public class Fragment_4 extends Fragment {
                         editor.remove("sc49");
                         editor.remove("sc410");
                         editor.remove("sc411");
-
+                        Toast.makeText(getActivity(),"값 삭제됨", Toast.LENGTH_LONG).show();
                         editor.remove("av41");
                         editor.remove("av42");
                         editor.remove("av43");
@@ -769,7 +771,7 @@ public class Fragment_4 extends Fragment {
         stan9.setText(preferences.getString("st49","0"));
         stan10.setText(preferences.getString("st410","0"));
         stan11.setText(preferences.getString("st411","0"));
-        Toast.makeText(getActivity(),"동기화됨", Toast.LENGTH_LONG).show();
+
     }
 }
 

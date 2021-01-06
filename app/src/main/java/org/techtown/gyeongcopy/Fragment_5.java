@@ -31,7 +31,7 @@ public class Fragment_5 extends Fragment {
     TextView textView, textView2,result1,result2,textView45;
     EditText first,second,third,fourth,fifth,sixth;
     TextView printscore1,printscore2,printscore3;
-    String[] items= {"0회","1회","2회","3회","4회","5회","6회 이상"}; //후에 스피너에 들어갈 아이템이다
+    String[] items= {"0회","1회","2회","3회","4회","5회","6회 이상"}; //후에 ㅌ`스피너에 들어갈 아이템이다
     String[] items3= {"0회","1회","2회","3회","4회","5회","6회 이상"};
     String[] items5= {"0회","1회","2회","3회","4회","5회","6회 이상"};
 

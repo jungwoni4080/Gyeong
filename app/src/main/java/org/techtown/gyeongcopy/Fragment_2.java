@@ -595,6 +595,7 @@ public class Fragment_2 extends Fragment {
         }
 
     }*/
+    //잉
     public String whatschar(int score){
         if(score>=90){
             return "A";
@@ -647,11 +648,12 @@ public class Fragment_2 extends Fragment {
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(getActivity(),"진짜버튼눌림", Toast.LENGTH_LONG).show();
+
                 switch(view.getId())
                 {
                     //데이터 저장하기
                     case R.id.btnSave:
+                        Toast.makeText(getActivity(),"값 저장됨", Toast.LENGTH_SHORT).show();
                         editor1.putString("sc2", score.getText().toString());
                         editor1.putString("sc22", score2.getText().toString());
                         editor1.putString("sc23", score3.getText().toString());
@@ -663,7 +665,7 @@ public class Fragment_2 extends Fragment {
                         editor1.putString("sc29", score9.getText().toString());
                         editor1.putString("sc210", score10.getText().toString());
                         editor1.putString("sc211", score11.getText().toString());
-                        Toast.makeText(getActivity(),"editor1실행",Toast.LENGTH_SHORT).show();
+
                         editor1.putString("av21", avg1.getText().toString());
                         editor1.putString("av22", avg2.getText().toString());
                         editor1.putString("av23", avg3.getText().toString());
@@ -691,6 +693,7 @@ public class Fragment_2 extends Fragment {
                         break;
                     //데이터 제거하기
                     case R.id.btnRemove:
+                        Toast.makeText(getActivity(),"값 삭제됨", Toast.LENGTH_SHORT).show();
                         editor1.remove("sc2");
                         editor1.remove("sc22");
                         editor1.remove("sc23");
@@ -772,6 +775,6 @@ public class Fragment_2 extends Fragment {
         stan9.setText(preferences.getString("st29","0"));
         stan10.setText(preferences.getString("st210","0"));
         stan11.setText(preferences.getString("st211","0"));
-        Toast.makeText(getActivity(),"동기화됨", Toast.LENGTH_LONG).show();
+
     }
 }

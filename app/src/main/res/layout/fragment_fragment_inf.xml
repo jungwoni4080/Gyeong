@@ -19,7 +19,7 @@
             <TextView
                 android:id="@+id/textView20"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="48dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="5dp"
@@ -185,7 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="3. 한 탭(학기별)이 끝날 때 마다 계산하기 버튼을 누른다."
+                android:text='3. 한 학기의 성적 입력이 끝난 후 "성적 계산하기" 버튼을 클릭하여 해당 학기의 성적을 확인한다.'
                 android:textColor="#000000" />
 
             <TextView
@@ -201,7 +201,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="5. 최종적으로 결과탭으로 넘어와서 성적 계산하기 버튼을 클릭하여 최종 결과를 확인한다."
+                android:text='5. 최종적으로 결과탭으로 넘어와서 "성적 계산하기" 버튼을 클릭하여 최종 내신 결과를 확인한다.'
                 android:textColor="#000000" />
 
             <TextView
@@ -209,7 +209,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="6. 성적 추이를 확인하고자 할 경우 성적 분석하기 버튼을 클릭한다."
+                android:text='6. 성적 추이를 확인하고자 할 경우 "성적 분석하기" 버튼을 클릭하여 그래프로 확인한다.'
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="7. 성적분석은 원점수 또는 표준점수의 그래프로 확인할 수 있다."
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text='8. 학기별 입력한 성적을 저장하고자 할 경우 "성적 저장하기" 버튼을 클릭한다.'
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="9. 학기별 입력한 성적을 삭제하고자 할 경우 '성적 삭제하기&quot; 버튼을 클릭한다."
                 android:textColor="#000000" />
 
         </LinearLayout>

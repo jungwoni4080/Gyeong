@@ -680,7 +680,7 @@ public class Fragment_1 extends Fragment {
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(getActivity(),"진짜버튼눌림", Toast.LENGTH_LONG).show();
+
                 switch(view.getId())
                 {
                     //데이터 저장하기
@@ -696,7 +696,7 @@ public class Fragment_1 extends Fragment {
                         editor.putString("sc9", score9.getText().toString());
                         editor.putString("sc10", score10.getText().toString());
                         editor.putString("sc11", score11.getText().toString());
-                        Toast.makeText(getActivity(),"editor실행",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),"값 저장됨", Toast.LENGTH_SHORT).show();
                         editor.putString("av1", avg1.getText().toString());
                         editor.putString("av2", avg2.getText().toString());
                         editor.putString("av3", avg3.getText().toString());
@@ -724,6 +724,7 @@ public class Fragment_1 extends Fragment {
                         break;
                     //데이터 제거하기
                     case R.id.btnRemove:
+                        Toast.makeText(getActivity(),"값 삭제됨", Toast.LENGTH_SHORT).show();
                         editor.remove("sc");
                         editor.remove("sc2");
                         editor.remove("sc3");
@@ -805,7 +806,7 @@ public class Fragment_1 extends Fragment {
         stan9.setText(preferences.getString("st9","0"));
         stan10.setText(preferences.getString("st10","0"));
         stan11.setText(preferences.getString("st11","0"));
-        Toast.makeText(getActivity(),"동기화됨", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity(),"동기화됨", Toast.LENGTH_LONG).show();
     }
     //jjjj
     /*public void clickSetBt(View view) {    // Set버튼 클릭 시    SharedPreferences에 값 저장.
