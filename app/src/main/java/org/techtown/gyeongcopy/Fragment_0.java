@@ -72,7 +72,7 @@ public class Fragment_0 extends Fragment {
         one7.setText(Double.toString(sangbong));
         one8.setText(Double.toString(sanghak));
 
-        //계산하기 버튼
+        //계산하기 버튼d
         Button button = view.findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
