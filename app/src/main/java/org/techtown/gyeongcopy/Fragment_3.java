@@ -41,9 +41,9 @@ public class Fragment_3 extends Fragment {
 
     //미술, 체육, 음악의 스피너(여러 가지 중에 선택)하도록 만들음
     int hmA=0,hmB=0,hmC=0;
-    String items[] = {"A","B","C"};
-    String items2[] = {"A","B","C"};
-    String items3[] = {"A","B","C"};
+    String items[] = {"X", "A","B","C"};
+    String items2[] = {"X","A","B","C"};
+    String items3[] = {"X","A","B","C"};
     String iac12,iac13,iac14;
     //char ch,ch2,ch3,ch4,ch5,ch6,ch7,ch8,ch9,ch10,ch11;
     public Fragment_3() {
@@ -139,9 +139,12 @@ public class Fragment_3 extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String location = spinner1.getSelectedItem().toString();
                 if(location==items[0]){
-                    iac12="A";
+                    iac12="K";
                 }
                 else if(location==items[1]){
+                    iac12="A";
+                }
+                else if (location == items[2]) {
                     iac12="B";
                 }
                 else {
@@ -160,9 +163,12 @@ public class Fragment_3 extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String location = spinner2.getSelectedItem().toString();
                 if(location==items2[0]){
-                    iac13="A";
+                    iac13="K";
                 }
                 else if(location==items2[1]){
+                    iac13="A";
+                }
+                else if (location == items2[2]) {
                     iac13="B";
                 }
                 else {
@@ -181,9 +187,12 @@ public class Fragment_3 extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String location = spinner3.getSelectedItem().toString();
                 if(location==items3[0]){
-                    iac14="A";
+                    iac14="K";
                 }
                 else if(location==items3[1]){
+                    iac14="A";
+                }
+                else if (location == items3[2]) {
                     iac14="B";
                 }
                 else {
@@ -346,7 +355,18 @@ public class Fragment_3 extends Fragment {
                 int iactoint12 = howmany1(iac12);//예체 과목의 성취도 점수를 따로 계산
                 int iactoint13 = howmany1(iac13);
                 int iactoint14 = howmany1(iac14);
-                double realscore2sum = 10+20*((double)(iactoint12+iactoint13+iactoint14)/9);
+                int artpe_num = 0;
+                if (iactoint12!=0) artpe_num+=1;
+                if (iactoint13!=0) artpe_num+=1;
+                if (iactoint14!=0) artpe_num+=1;
+
+                double realscore2sum;
+                if (iactoint12==0 && iactoint13==0 && iactoint14==0){
+                    realscore2sum=30;
+                }
+                else {
+                    realscore2sum = 10+20*((double)(iactoint12+iactoint13+iactoint14)/(3*artpe_num));
+                }
                 realscore2sum=Math.round(realscore2sum*100000.0)/100000.0;
                 howmany(iscore); //몇 개의 과목이 있는지 확인
                 howmany(iscore2);
@@ -638,7 +658,8 @@ public class Fragment_3 extends Fragment {
         }
     }
     public int howmany1(String str){
-        if(str.contains("A")) return 3;
+        if(str.contains("K")) return 0;
+        else if(str.contains("A")) return 3;
         else if(str.contains("B")) return 2;
         else return 1;
     }
